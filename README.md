@@ -1,6 +1,10 @@
 # shell-scripts
 Debian Based Script for first login
 
+Usage: 
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-server.sh
+sudo sh new-server.sh
+
 This script will install basic security measures such as f2b and csf
 This script will also update your server packages and install webmin
 
