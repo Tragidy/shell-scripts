@@ -38,8 +38,9 @@ wait $!
 #Install inital apps, mainly Fail2Ban, we want this running ASAP
 echo "Updating and upgrades complete, moving on..."
 apt-get install fail2ban -y >/dev/null 2>&1 &
-echo "Fail2Ban Installed an Activated"
 wait $!
+echo "Fail2Ban Installed an Activated"
+echo "Installing common and required packages"
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
 wait $!
 echo "Installed general applications and runtimes"
@@ -47,9 +48,9 @@ echo "Installed general applications and runtimes"
 # Download Firewall and install
 cd /usr/src
 rm -fv csf.tgz
+echo "Downloading and Extracting ConfigServerFirewall"
 wget https://download.configserver.com/csf.tgz >/dev/null 2>&1 &
 wait $!
-echo "Downloading and Extracting ConfigServerFirewall"
 tar -xzf csf.tgz
 cd csf
 echo "Going to install CSF"
