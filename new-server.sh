@@ -57,6 +57,7 @@ echo "Going to install CSF"
 sh install.sh &
 wait $!
 
+# Extraction and software tools
 echo "Installing extraction and container tools"
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel rkhunter -y >/dev/null 2>&1 &
 wait $!
@@ -71,14 +72,17 @@ dpkg --install webmin_1.770_all.deb &
 wait $!
 echo "Webmin Installation Complete"
 service webmin stop >/dev/null 2>&1 &
+wait $!
 echo "Stopping Webmin..."
 cp /etc/webmin/miniserv.conf /etc/webmin/miniserv.conf.bak
 sed -i 's/^port .*/port=2223/g' /etc/webmin/miniserv.conf
 echo "Webmin port changed to 2223"
+service webmin start
+echo "Starting Webmin..."
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
-service fail2ban restart
+service fail2ban restart >/dev/null 2>&1
 clear
 
 echo "Script Complete"
