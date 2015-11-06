@@ -74,7 +74,7 @@ echo "Installing extraction tools"
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel rkhunter -y >/dev/null 2>&1 &
 wait $!
 
-#Setup Auto update
+# Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
 service fail2ban restart
 clear
@@ -87,6 +87,5 @@ echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
 echo "SSH Port: 2222"
 echo "Webmin Port: 2223"
-sleep 5
 
 EOF
