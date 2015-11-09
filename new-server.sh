@@ -63,22 +63,17 @@ sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uu
 wait $!
 
 # Install Webmin
-echo "Downloading Webmin"
+echo "Downloading Webmin from Source Forge"
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.770_all.deb >/dev/null 2>&1 &
 wait $!
-echo "Webmin 1.770 Download Completed"
+echo "Webmin 1.770 Download has Completed"
 echo "Installing Webmin........................"
-dpkg --install webmin_1.770_all.deb &
+echo "This will take"
+dpkg --install webmin_1.770_all.deb >/dev/null 2>&1 &
 wait $!
 echo "Webmin Installation Complete"
 service webmin stop >/dev/null 2>&1 &
 wait $!
-echo "Stopping Webmin..."
-cp /etc/webmin/miniserv.conf /etc/webmin/miniserv.conf.bak
-sed -i 's/^port .*/port=2223/g' /etc/webmin/miniserv.conf
-echo "Webmin port changed to 2223"
-service webmin start
-echo "Starting Webmin..."
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
@@ -92,6 +87,4 @@ echo "Install the firewall webmin module in:"
 echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
 echo "SSH Port: 2222"
-echo "Webmin Port: 2223"
-
-EOF
+echo "Webmin Port: 10000"
