@@ -32,7 +32,7 @@ service ssh restart
 
 echo "Starting inital update and upgrade of known packages"
 date;
-apt-get update -y && apt-get upgrade -y >/dev/null 2>&1 &
+apt-get update -y && apt-get upgrade -y &
 wait $!
 
 #Install inital apps, mainly Fail2Ban, we want this running ASAP
