@@ -20,13 +20,6 @@ if [[ "$USER" != 'root' ]]; then
 	exit
 fi
 
-
-if [[ ! -e /dev/net/tun ]]; then
-	echo "TUN/TAP is not available"
-	exit
-fi
-
-
 if grep -qs "CentOS release 5" "/etc/redhat-release"; then
 	echo "CentOS 5 is too old and not supported"
 	exit
