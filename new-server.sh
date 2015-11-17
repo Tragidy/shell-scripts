@@ -68,7 +68,7 @@ wget http://prdownloads.sourceforge.net/webadmin/webmin_1.770_all.deb >/dev/null
 wait $!
 echo "Webmin 1.770 Download has Completed"
 echo "Installing Webmin........................"
-echo "This will take"
+echo "This can take a long time"
 dpkg --install webmin_1.770_all.deb >/dev/null 2>&1 &
 wait $!
 echo "Webmin Installation Complete"
