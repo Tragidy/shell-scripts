@@ -59,7 +59,7 @@ wait $!
 
 # Extraction and software tools
 echo "Installing extraction and container tools"
-sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel rkhunter -y >/dev/null 2>&1 &
+sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y >/dev/null 2>&1 &
 wait $!
 
 # Install Webmin
