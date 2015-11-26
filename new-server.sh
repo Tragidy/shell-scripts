@@ -61,15 +61,16 @@ wait $!
 echo "Installing extraction and container tools"
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y >/dev/null 2>&1 &
 wait $!
+echo "Moving on to webmin"
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.770_all.deb >/dev/null 2>&1 &
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.770_all.deb &
 wait $!
 echo "Webmin 1.770 Download has Completed"
 echo "Installing Webmin........................"
 echo "This can take a long time"
-dpkg --install webmin_1.770_all.deb >/dev/null 2>&1 &
+dpkg --install webmin_1.770_all.deb  &
 wait $!
 echo "Webmin Installation Complete"
 service webmin stop >/dev/null 2>&1 &
