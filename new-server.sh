@@ -73,11 +73,11 @@ echo "This can take a long time"
 dpkg --install webmin_1.770_all.deb  &
 wait $!
 echo "Webmin Installation Complete"
-service webmin stop >/dev/null 2>&1 &
-wait $!
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
+service webmin restart >/dev/null 2>&1 &
+wait $!
 service fail2ban restart >/dev/null 2>&1
 clear
 
