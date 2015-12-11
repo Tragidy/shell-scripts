@@ -36,7 +36,6 @@ wait $!
 echo "Updating and upgrades complete, moving on..."
 apt-get install fail2ban -y >/dev/null 2>&1 &
 wait $!
-echo "Fail2Ban Installed and Activated"
 echo "Installing common packages"
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
 wait $!
@@ -49,12 +48,11 @@ wait $!
 # Download Firewall and install
 cd /usr/src
 rm -fv csf.tgz
-echo "Downloading and Extracting ConfigServerFirewall"
+echo "Downloading and Installing ConfigServerFirewall"
 wget https://download.configserver.com/csf.tgz >/dev/null 2>&1 &
 wait $!
 tar -xzf csf.tgz
 cd csf
-echo "Time to install CSF"
 sh install.sh &
 wait $!
 
@@ -63,7 +61,7 @@ echo "Downloading Webmin from Source Forge"
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.770_all.deb &
 wait $!
 echo "Installing Webmin........................"
-echo "This can take a long time please wait script will tell you when install is complete."
+echo "This can take a long time on ARM or Small VPS systems."
 dpkg --install webmin_1.770_all.deb  &
 wait $!
 echo "Webmin Installation Complete"
