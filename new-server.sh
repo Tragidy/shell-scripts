@@ -11,16 +11,11 @@
 
 # Clear window, show banner/credits
 clear
-echo "Starting Quick Node Script"
-echo "Script by TRAGiDY"
-sleep 1
 
 #Secure SSH Right Away
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sed -i 's/^Port .*/Port 25222/g' /etc/ssh/sshd_config
 sed -i 's/^ServerKeyBits .*/ServerKeyBits 4096/g' /etc/ssh/sshd_config
-echo "SSH PORT changed to 25222"
-echo "Keybits Changed to 4096"
 service ssh restart
 
 # We Assume this is a new instance/server so we want to go stealth for now 
@@ -29,6 +24,9 @@ echo "Dropping all ICMP Echo Request for this session"
 iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
 echo "All ping request are blocked until next reboot"
+echo "SSH PORT changed to 25222"
+echo "Keybits Changed to 4096"
+sleep 1
 
 echo "Starting inital update and upgrade of known packages"
 apt-get update -y && apt-get upgrade -y &
