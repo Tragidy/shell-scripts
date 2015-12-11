@@ -4,16 +4,16 @@ Debian Based Script for first login
 Usage: 
 wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-server.sh && bash new-server.sh
 
-This script will install basic security measures such as f2b and csf
-This script will also update your server packages and install webmin
+This script will install basic security measures such as Fail2Ban and Config Server Firewall
+This script will also update your server packages and install webmin for you.
 
 Packages installed
 
 perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl
 
-Fail2Ban, CSF, Webmin
+unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel 
 
-unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel rkhunter
+fail2ban webmin
 
 This script is for use on a fresh server or instance.
 
