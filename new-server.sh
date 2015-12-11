@@ -13,14 +13,7 @@
 clear
 echo "Starting Quick Node Script"
 echo "Script by TRAGiDY"
-sleep 2
-
-# We Assume this is a new instance/server so we want to go stealth for now 
-# Temp IP Table to block ping/icmp, cleared upon reboot
-echo "Dropping all ICMP Echo Request for this session"
-iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
-iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
-echo "All ping request are blocked until next reboot"
+sleep 1
 
 #Secure SSH Right Away
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
@@ -30,6 +23,13 @@ echo "SSH PORT changed to 25222"
 echo "Keybits Changed to 4096"
 service ssh restart
 
+# We Assume this is a new instance/server so we want to go stealth for now 
+# Temp IP Table to block ping/icmp, cleared upon reboot
+echo "Dropping all ICMP Echo Request for this session"
+iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
+echo "All ping request are blocked until next reboot"
+
 echo "Starting inital update and upgrade of known packages"
 apt-get update -y && apt-get upgrade -y &
 wait $!
@@ -38,11 +38,15 @@ wait $!
 echo "Updating and upgrades complete, moving on..."
 apt-get install fail2ban -y >/dev/null 2>&1 &
 wait $!
-echo "Fail2Ban Installed an Activated"
+echo "Fail2Ban Installed and Activated"
 echo "Installing common packages"
 apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
 wait $!
-echo "Installed general applications and runtimes"
+
+# Extraction and software tools
+echo "Installing extraction and container tools"
+sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y >/dev/null 2>&1 &
+wait $!
 
 # Download Firewall and install
 cd /usr/src
@@ -56,19 +60,12 @@ echo "Time to install CSF"
 sh install.sh &
 wait $!
 
-# Extraction and software tools
-echo "Installing extraction and container tools"
-sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y >/dev/null 2>&1 &
-wait $!
-echo "Moving on to webmin"
-
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.770_all.deb &
 wait $!
-echo "Webmin 1.770 Download has Completed"
 echo "Installing Webmin........................"
-echo "This can take a long time"
+echo "This can take a long time please wait script will tell you when install is complete."
 dpkg --install webmin_1.770_all.deb  &
 wait $!
 echo "Webmin Installation Complete"
@@ -81,7 +78,6 @@ service fail2ban restart >/dev/null 2>&1
 clear
 
 echo "Script Complete"
-echo "Installed Apps and Firewall"
 echo "Install the firewall webmin module in:"
 echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
