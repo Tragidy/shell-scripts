@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-server.s
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
 This script will also update your server packages and install webmin for you.
 
-Packages installed
+Packages installed are
 
 perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl
 
