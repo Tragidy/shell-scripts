@@ -9,7 +9,7 @@
 # of the same families, although no support is offered for them. It has been 
 # designed to be as unobtrusive and universal as possible.
 
-# Clear window, show banner/credits
+# Clear window, show banner credits
 clear
 
 #Secure SSH Right Away
