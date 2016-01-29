@@ -24,4 +24,3 @@ Install the firewall webmin module in:
 Webmin > Webmin Configuration > Webmin Modules >
 From local file > /usr/local/csf/csfwebmin.tgz
 
-Future editions will include preloaded module.
