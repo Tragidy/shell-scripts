@@ -14,7 +14,7 @@ clear
 
 #Secure SSH Right Away
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sed -i 's/^Port .*/Port 25222/g' /etc/ssh/sshd_config
+sed -i 's/^Port .*/Port 25422/g' /etc/ssh/sshd_config
 sed -i 's/^ServerKeyBits .*/ServerKeyBits 4096/g' /etc/ssh/sshd_config
 service ssh restart
 
@@ -23,8 +23,8 @@ service ssh restart
 echo "Dropping all ICMP Echo Request for this session"
 iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
-echo "All ping request are blocked until next reboot"
-echo "SSH PORT changed to 25222"
+echo "All ICMP Echo request are blocked"
+echo "SSH PORT changed to 25422"
 echo "Keybits Changed to 4096"
 sleep 1
 
@@ -77,5 +77,5 @@ echo "Script Complete"
 echo "Install the firewall webmin module in:"
 echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
-echo "SSH Port: 25222"
+echo "SSH Port: 25422"
 echo "Webmin Port: 10000"
