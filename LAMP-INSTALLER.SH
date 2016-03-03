@@ -9,9 +9,30 @@
 # of the same families, although no support is offered for them. It has been 
 # designed to be as unobtrusive and universal as possible.
 
-# init
 # Clear window, show banner credits
 clear
+
+# Check for root
+if [[ "$EUID" -ne 0 ]]; then
+	echo "Sorry, you need to run this as root"
+	exit 1
+fi
+
+# Ensure release can be maintained
+if grep -qs "CentOS release 4" "/etc/redhat-release"; then
+	echo "CentOS 4 is too old and not supported"
+	exit 3
+fi
+
+if [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
+	OS=centos
+	RCLOCAL='/etc/rc.d/rc.local'
+	# Needed for CentOS 7
+	chmod +x /etc/rc.d/rc.local
+else
+	echo "Looks like you aren't running this installer on a RedHat or CentOS system"
+	exit 4
+fi
 
 
 echo "Making sure system and repos are updated"
