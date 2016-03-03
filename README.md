@@ -2,14 +2,19 @@
 Server Script for first login
 
 Debian
+
 Fresh Server Script
+
 wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-debian-server.sh && bash new-debian-server.sh
 
 CentOS
+
 Fresh Server Script
+
 wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-centos-server.sh && bash new-centos-server.sh
 
 LAMP Stack
+
 wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/LAMP-INSTALLER.SH && bash LAMP-INSTALLER.SH
 
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
