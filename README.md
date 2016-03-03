@@ -1,8 +1,16 @@
 # shell-scripts
-Debian Based Script for first login
+Server Script for first login
 
-Usage: 
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-server.sh && bash new-server.sh
+Debian
+Fresh Server Script
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-debian-server.sh && bash new-debian-server.sh
+
+CentOS
+Fresh Server Script
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-centos-server.sh && bash new-centos-server.sh
+
+LAMP Stack
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/LAMP-INSTALLER.SH && bash LAMP-INSTALLER.SH
 
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
 This script will also update your server packages and install webmin for you.
