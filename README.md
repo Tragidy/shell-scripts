@@ -1,17 +1,11 @@
 # shell-scripts
 Server Script for first login
 
-Debian
-
 Fresh Server Script
+works with centos/debian based linux.
 
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-debian-server.sh && bash new-debian-server.sh
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/FreshServer.sh && bash FreshServer.sh
 
-CentOS
-
-Fresh Server Script
-
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/new-centos-server.sh && bash new-centos-server.sh
 
 LAMP Stack
 
