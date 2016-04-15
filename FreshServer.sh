@@ -98,7 +98,7 @@ echo "Script Complete"
 echo "Install the firewall webmin module in:"
 echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
-echo "SSH Port: 25422"
+echo "SSH Port: 54235"
 echo "Webmin Port: 10000"
 				else
 					yum update -y && yum upgrade -y &
