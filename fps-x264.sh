@@ -9,8 +9,6 @@ mkdir FPSGauge-x264
 cd FPSGauge-x264
 wget http://jell.yfish.us/media/jellyfish-10-mbps-hd-h264.mkv &
 wait $!
-wget http://www.elecard.com/assets/files/other/clips/Elecard_about_Tomsk_part3_HEVC_720p.mp4 &
-wait $!
 mv jellyfish-10-mbps-hd-h264.mkv 1080p-src.mp4
 echo " Starting encoding be sure to document any fps average 1080p 30FPS 5MBps "
 wait $!
