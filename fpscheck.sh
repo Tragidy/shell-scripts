@@ -3,7 +3,7 @@
 # script is crude by nature if you want flashing likes look elsewhere
 
 echo " This script runs with the assumption you have the lastest libav installed on your device"
-sudo apt-get install -y libav-tools ubuntu-restricted-extras libavformat-extra-54 imagemagick &
+sudo apt-get install -y libav-tools &
 wait $!
 mkdir FPSGauge
 cd FPSGauge
