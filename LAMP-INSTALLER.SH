@@ -43,11 +43,10 @@ wait $!
 echo "Installing latest version of Apache in your repo."
 yum install httpd httpd-devel -y >/dev/null 2>&1 &
 wait $!
-echo "Starting Apache"
 /etc/init.d/httpd start &
 wait $!
 
-# SQL
+# mySQL
 echo "Installing mySQL you will be prompted to set a mysql root password"
 yum install mysql mysql-server mysql-devel -y &
 wait $!
