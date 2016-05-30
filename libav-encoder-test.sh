@@ -32,35 +32,35 @@ case $VID in
 		wget http://download.openbricks.org/sample/H264/big_buck_bunny_480p_H264_AAC_25fps_1800K.MP4 &
 		wait $!
 		mv big_buck_bunny_480p_H264_AAC_25fps_1800K.MP4 sample.mp4
-		avconv -i sample.mp4 -c:v libx264 sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		2)
 		wget http://download.openbricks.org/sample/H264/big_buck_bunny_720p_H264_AAC_25fps_3400K.MP4 &
 		wait $!
 		mv big_buck_bunny_720p_H264_AAC_25fps_3400K.MP4 sample.mp4
-		avconv -i sample.mp4 -c:v libx264 sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		3)
 		wget http://download.openbricks.org/sample/H264/big_buck_bunny_1080p_H264_AAC_25fps_7200K.MP4 &
 		wait $!
 		mv big_buck_bunny_1080p_H264_AAC_25fps_7200K.MP4 sample.mp4
-		avconv -i sample.mp4 -c:v libx264 sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		4)
 		wget https://s3.amazonaws.com/x265.org/video/Tears_400_x265.mp4 &
 		wait $!
 		mv Tears_400_x265.mp4 sample.mp4
-		avconv -i sample.mp4 -c:v libx264 sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		5)
 		wget http://downloads.4ksamples.com/downloads/sample-Elysium.2013.2160p.mkv &
 		wait $!
 		mv sample-Elysium.2013.2160p.mkv sample.mkv
-		avconv -i sample.mkv -c:v libx264 sample-out.mp4 &
+		avconv -i sample.mkv -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 	esac
