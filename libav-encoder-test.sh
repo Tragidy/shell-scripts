@@ -29,6 +29,14 @@ else
 	exit 4
 fi
 
+if [[ "$OS" = 'debian' ]]; then
+apt-get install libav-tools -y &
+wait $!
+else
+yum install libav-tools -y &
+wait $!
+fi
+
 #cleanup
 rm -rf sample.mkv sample.mp4 sample-out.mp4 sample-out.mkv
 
