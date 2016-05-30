@@ -1,5 +1,5 @@
 #!/bin/bash
-# Redhat Based Fresh Server Primer
+# Fresh Server Primer
 # By TRAGiDY https://github.com/Tragidy/
 # 
 # Released Under Apache 2.0 License 
