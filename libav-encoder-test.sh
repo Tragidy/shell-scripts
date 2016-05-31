@@ -5,7 +5,7 @@
 # Released Under Apache 2.0 License 
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# This script will work on any linux/bash/posix with libav installed
+# This script will work on any CentOS Bases or Debian Based linux.
 
 
 # Detect "sh" instead of bash for debian user
