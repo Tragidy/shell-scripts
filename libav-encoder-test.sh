@@ -88,4 +88,4 @@ case $VID in
 		;;
 	esac
 	
-	
+	echo "Encoding complete please note the time to complete the task or fps"
