@@ -79,13 +79,14 @@ wait $!
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.801_all.deb &
+wget -O webmin.deb http://prdownloads.sourceforge.net/webadmin/webmin_1.801_all.deb &
 wait $!
 echo "Installing Webmin........................"
 echo "This can take a long time on ARM or Small VPS systems."
-dpkg --install webmin_1.770_all.deb  &
+dpkg --install webmin.deb  &
 wait $!
 echo "Webmin Installation Complete"
+rm -rf webmin.deb
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
@@ -134,13 +135,14 @@ wait $!
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget http://prdownloads.sourceforge.net/webadmin/webmin-1.801-1.noarch.rpm &
+wget -O webmin.rpm http://prdownloads.sourceforge.net/webadmin/webmin-1.801-1.noarch.rpm &
 wait $!
 echo "Installing Webmin........................"
 echo "This can take a long time on ARM or Small VPS systems."
-rpm -U webmin-1.780-1.noarch.rpm  &
+rpm -U webmin.rpm  &
 wait $!
 echo "Webmin Installation Complete"
+rm -rf webmin.rpm
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  yum update -y" >> /etc/crontab/
