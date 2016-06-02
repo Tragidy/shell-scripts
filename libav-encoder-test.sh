@@ -77,5 +77,5 @@ case $VID in
 	esac
 	
 	#cleanup
-rm -rf sample.mkv sample.mp4 sample-out.mp4 sample-out.mkv
+        rm -rf sample.mkv sample.mp4 sample-out.mp4 sample-out.mkv
 	echo "Encoding complete please note the time to complete the task or fps"
