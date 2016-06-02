@@ -33,9 +33,6 @@ yum install libav-tools -y &
 wait $!
 fi
 
-#cleanup
-rm -rf sample.mkv sample.mp4 sample-out.mp4 sample-out.mkv
-
 echo ""
 	echo "What Video Source do you want to work with?"
 	echo "   1) x264 480P"
@@ -79,4 +76,6 @@ case $VID in
 		;;
 	esac
 	
+	#cleanup
+rm -rf sample.mkv sample.mp4 sample-out.mp4 sample-out.mkv
 	echo "Encoding complete please note the time to complete the task or fps"
