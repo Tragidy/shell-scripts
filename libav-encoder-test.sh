@@ -18,12 +18,8 @@ fi
 #Check OS before we go
 if [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
 	OS=centos
-	RCLOCAL='/etc/rc.d/rc.local'
-	# Needed for CentOS 7
-	chmod +x /etc/rc.d/rc.local
 elif [[ -e /etc/debian_version ]]; then
 	OS=debian
-	RCLOCAL='/etc/rc.local'
 else
 	echo "Looks like you aren't running this installer on a RedHat or CentOS system"
 	exit 4
