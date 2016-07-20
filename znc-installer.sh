@@ -44,7 +44,7 @@ echo ""
 	case $VID in
 		1)
 echo "Configuring ZNC with basic/stock options"
-./configure >/dev/null 2>&1 &
+./configure &
 wait $!
 echo "Configure complete, getting read to build from source"
 echo "Building from source... This may take some time please wait"
@@ -58,11 +58,11 @@ echo "Build Complete!"
 echo "Under any account on the system please issue the command znc --makeconf to create a znc client for this user."
 		;;
 		2)
-echo "Configuring ZNC with basic/stock options"
-./configure >/dev/null 2>&1 &
+echo "Configuring ZNC for a low memory system"
+./configure --disable-optimization CXXFLAGS="--param ggc-min-expand=2 --param ggc-min-heapsize=20000" &
 wait $!
 echo "Configure complete, getting read to build from source"
-echo "Building from source... This may take some time please wait"
+echo "Building from source... This will take a long time"
 make >/dev/null 2>&1 &
 wait $!
 echo "Build Complete!"
