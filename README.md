@@ -10,7 +10,7 @@ wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/FreshServer.
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
 This script will also update your server packages and install webmin for you.
 
-Packages installed are
+**Packages installed are**
 
 perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel fail2ban webmin
 
