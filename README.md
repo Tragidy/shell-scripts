@@ -28,9 +28,9 @@ wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/libav-encode
 ##LAMP Stack
 
 Installs Apache, MySQL, PHP
-
+```
 wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/LAMP-INSTALLER.SH && bash LAMP-INSTALLER.SH
-
+```
 ##ZNC Installer
 
 Downloads, configures and installs ZNC on your machine with options for low memory systems
