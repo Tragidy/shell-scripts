@@ -33,7 +33,7 @@ wget -O lampins.sh https://git.io/vKXBi && bash lampins.sh
 ```
 ##ZNC Installer
 
-Downloads, configures and installs ZNC on your machine with options for low memory systems
+Downloads, configures, compiles from source with options for low memory systems
 ```
 wget -O znci.sh https://git.io/vKXB9 && bash znci.sh
 ```
