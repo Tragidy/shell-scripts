@@ -15,7 +15,7 @@ if readlink /proc/$$/exe | grep -qs "dash"; then
 	exit 1
 fi
 
-#Check OS before we go
+#Check OS
 if [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
 	OS=centos
 elif [[ -e /etc/debian_version ]]; then
