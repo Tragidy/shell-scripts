@@ -1,4 +1,4 @@
-# shell-scripts
+# Linux Server Shell Scripts
 
 Scripts for CentOS, Debian, Fedora and Ubuntu
 
