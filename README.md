@@ -5,7 +5,7 @@ Scripts for CentOS, Debian, Fedora and Ubuntu
 ##Fresh Server Script
 works with centos/debian based linux.
 ```
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/FreshServer.sh && bash FreshServer.sh
+wget -O freshserver.sh https://git.io/vKXBT && bash freshserver.sh
 ```
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
 This script will also update your server packages and install webmin for you.
@@ -23,17 +23,17 @@ From local file > /usr/local/csf/csfwebmin.tgz
 
 ##Test your CPU for encoding x264 and x265
 ```
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/libav-encoder-test.sh && bash libav-encoder-test.sh
+wget -O libav.sh https://git.io/vKXBg && bash libav.sh
 ```
 ##LAMP Stack
 
 Installs Apache, MySQL, PHP
 ```
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/LAMP-INSTALLER.SH && bash LAMP-INSTALLER.SH
+wget -O lampins.sh https://git.io/vKXBi && bash lampins.sh
 ```
 ##ZNC Installer
 
 Downloads, configures and installs ZNC on your machine with options for low memory systems
 ```
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/znc-installer.sh && bash znc-installer.sh
+wget -O znci.sh https://git.io/vKXB9 && bash znci.sh
 ```
