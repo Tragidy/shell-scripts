@@ -2,15 +2,7 @@
 
 Scripts for CentOS, Debian, Fedora and Ubuntu
 
-#Test your CPU for encoding x264 and x265
-
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/libav-encoder-test.sh && bash libav-encoder-test.sh
-
-LAMP Stack
-
-wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/LAMP-INSTALLER.SH && bash LAMP-INSTALLER.SH
-
-Fresh Server Script
+##Fresh Server Script
 works with centos/debian based linux.
 
 wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/FreshServer.sh && bash FreshServer.sh
@@ -28,4 +20,13 @@ Want CSF inside webmin?
 Install the firewall webmin module in:
 Webmin > Webmin Configuration > Webmin Modules >
 From local file > /usr/local/csf/csfwebmin.tgz
+
+##Test your CPU for encoding x264 and x265
+
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/libav-encoder-test.sh && bash libav-encoder-test.sh
+
+##LAMP Stack
+
+wget https://raw.githubusercontent.com/Tragidy/shell-scripts/master/LAMP-INSTALLER.SH && bash LAMP-INSTALLER.SH
+
 
