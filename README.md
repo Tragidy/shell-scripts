@@ -25,6 +25,16 @@ From local file > /usr/local/csf/csfwebmin.tgz
 ```
 wget -O libav.sh https://git.io/vKXBg && bash libav.sh
 ```
+```
+What Video Source do you want to work with?
+   1) x264 480P
+   2) x264 720P
+   3) X264 1080P
+   4) X265 1080P
+   5) X265 4K
+VID [1-5]: 1
+```
+
 ##LAMP Stack
 
 Installs Apache, MySQL, PHP
