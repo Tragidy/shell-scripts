@@ -47,3 +47,10 @@ Downloads, configures, compiles from source with options for low memory systems
 ```
 wget -O znci.sh https://git.io/vKXB9 && bash znci.sh
 ```
+```
+Please select a configuration option
+   1) Standard Build and Installtion
+   2) Low Memory Build and Installation
+CONFIG [1-2]: 1
+```
+
