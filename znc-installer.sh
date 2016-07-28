@@ -28,7 +28,7 @@ echo ""
 	read -p "CONFOP [1-2]: " -e -i 1 CONFOP
 	echo ""
 	
-	case $VID in
+	case $CONFOP in
 		1)
 echo "Configuring ZNC with basic/stock options"
 ./configure &
