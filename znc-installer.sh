@@ -3,16 +3,13 @@
 # By TRAGiDY https://github.com/Tragidy/
 # Downloads, Compiles and Installs ZNC
 
-# Clear window, show banner credits
-clear
-
-# Check for root
+# First we check for root
 if [[ "$EUID" -ne 0 ]]; then
 	echo "Sorry, you need to run this as root"
 	exit 1
 fi
 
-# Debian Helper
+# Are you running Debian?
 if [[ -e /etc/debian_version ]]; then
 OS=debian
 apt-get update -y &
@@ -21,7 +18,7 @@ apt-get install build-essential libssl-dev libperl-dev libicu-dev -y &
 wait $!
 fi
 
-# Create a clean working space
+# Create working space
 rm -rf zncinstaller
 mkdir zncinstaller
 cd zncinstaller
@@ -30,6 +27,7 @@ wait $!
 tar -xzvf znc*.*gz &
 wait $!
 cd znc*
+clear
 echo ""
 	echo "Please select a configuration option"
 	echo "   1) Standard Build and Installtion"
