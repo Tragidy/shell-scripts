@@ -12,6 +12,15 @@ if [[ "$EUID" -ne 0 ]]; then
 	exit 1
 fi
 
+# Debian Helper
+if [[ -e /etc/debian_version ]]; then
+OS=debian
+apt-get update -y &
+wait $!
+apt-get install build-essential libssl-dev libperl-dev libicu-dev -y &
+wait $!
+fi
+
 # Create a clean working space
 rm -rf zncinstaller
 mkdir zncinstaller
