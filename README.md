@@ -35,12 +35,6 @@ What Video Source do you want to work with?
 VID [1-5]: 1
 ```
 
-##LAMP Stack
-
-Installs Apache, MySQL, PHP
-```
-wget -O lampins.sh https://git.io/vKXBi && bash lampins.sh
-```
 ##ZNC Installer
 
 Downloads, configures, compiles from source with options for low memory systems
