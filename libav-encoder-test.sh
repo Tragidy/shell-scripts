@@ -45,21 +45,21 @@ echo ""
 
 case $VID in
 		1)
-		wget -O sample.mp4 http://download.openbricks.org/sample/H264/big_buck_bunny_480p_H264_AAC_25fps_1800K.MP4 &
+		wget -O sample.avi http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_surround-fix.avi &
 		wait $!
-		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
+		avconv -i sample.avi -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		2)
-		wget -O sample.mp4 http://download.openbricks.org/sample/H264/big_buck_bunny_720p_H264_AAC_25fps_3400K.MP4 &
+		wget -O sample.avi http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_720p_surround.avi &
 		wait $!
-		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
+		avconv -i sample.avi -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		3)
-		wget -O sample.mp4 http://download.openbricks.org/sample/H264/big_buck_bunny_1080p_H264_AAC_25fps_7200K.MP4 &
+		wget -O sample.avi http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_surround.avi &
 		wait $!
-		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
+		avconv -i sample.avi -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		4)
@@ -77,5 +77,5 @@ case $VID in
 	esac
 	
 	#cleanup
-        rm -rf sample.mkv sample.mp4 sample-out.mp4 sample-out.mkv
+        rm -rf sample.mkv sample.avi sample.mp4 sample-out.mp4 sample-out.mkv
 	echo "Encoding complete please note the time to complete the task or fps"
