@@ -48,8 +48,8 @@ echo "Keybits Changed to 4096"
 sleep 1
 
 echo "Starting inital update and upgrade of known packages"
-				if [[ "$OS" = 'debian' ]]; then
-					echo "Starting inital update and upgrade of known packages"
+if [[ "$OS" = 'debian' ]]; then
+echo "Starting inital update and upgrade of known packages"
 apt-get update -y && apt-get upgrade -y &
 wait $!
 
