@@ -139,7 +139,7 @@ wget -O webmin.rpm http://prdownloads.sourceforge.net/webadmin/webmin-1.810-1.no
 wait $!
 echo "Installing Webmin........................"
 echo "This can take a long time on ARM or Small VPS systems."
-rpm -U webmin.rpm  &
+yum localinstall webmin.rpm -y  &
 wait $!
 echo "Webmin Installation Complete"
 rm -rf webmin.rpm
