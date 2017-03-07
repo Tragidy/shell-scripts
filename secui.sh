@@ -32,10 +32,10 @@ echo "Updating and upgrades complete, moving on..."
 apt-get install fail2ban -y
 wait $!
 echo "Installing common packages"
-apt-get install ca-certificates git unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y
+apt-get install ca-certificates git zip unzip p7zip-full p7zip-rar sharutils axel perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl python libgd-graph-perl -y
 wait $!
 
-sudo apt-get install gcc git ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
+sudo apt-get install gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
 wait $!
 
 # Setup Auto update with cron
