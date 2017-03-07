@@ -58,7 +58,7 @@ echo "Updating and upgrades complete, moving on..."
 apt-get install fail2ban -y >/dev/null 2>&1 &
 wait $!
 echo "Installing common packages"
-apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
+apt-get install ca-certificates perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
 wait $!
 
 # Extraction and software tools
