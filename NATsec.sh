@@ -40,24 +40,23 @@ wait $!
 
 #Install inital apps, mainly Fail2Ban, we want this running ASAP
 echo "Updating and upgrades complete, moving on..."
-apt-get install fail2ban -y >/dev/null 2>&1 &
+apt-get install fail2ban -y
 wait $!
 echo "Installing common packages"
-apt-get install ca-certificates perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
+apt-get install ca-certificates perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y
 wait $!
 
 # Extraction and software tools
 echo "Installing extraction and container tools"
-sudo apt-get install git unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y >/dev/null 2>&1 &
+sudo apt-get install git unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y
 wait $!
 
-sudo apt-get install gcc git ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y >/dev/null 2>&1 &
+sudo apt-get install gcc git ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
 wait $!
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
 service fail2ban restart >/dev/null 2>&1
-clear
 
 echo "Script Complete"
 
