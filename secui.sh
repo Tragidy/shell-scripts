@@ -1,16 +1,10 @@
 #!/bin/bash
-# NAT Server Primer
-# By TRAGiDY https://github.com/Tragidy/
+# Self Scanning Installer
 # 
 # Released Under Apache 2.0 License 
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# This script will Debian maybe other distros
-# of the same families, although no support is offered for them. It has been 
-# designed to be as unobtrusive and universal as possible.
-
-# Clear window, show banner credits
-clear
+# Debian maybe other distros
 
 # Check for root
 if [[ "$EUID" -ne 0 ]]; then
@@ -21,11 +15,6 @@ fi
 if [[ -e /etc/debian_version ]]; then
 	OS=debian
 	RCLOCAL='/etc/rc.local'
-elif [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
-	OS=centos
-	RCLOCAL='/etc/rc.d/rc.local'
-	# Needed for CentOS 7
-	chmod +x /etc/rc.d/rc.local
 else
 	echo "Looks like you aren't running this installer on a Debian or CentOS system"
 	exit 4
@@ -38,17 +27,12 @@ echo "Starting inital update and upgrade of known packages"
 apt-get update -y && apt-get upgrade -y &
 wait $!
 
-#Install inital apps, mainly Fail2Ban, we want this running ASAP
+#Install inital apps
 echo "Updating and upgrades complete, moving on..."
 apt-get install fail2ban -y
 wait $!
 echo "Installing common packages"
-apt-get install ca-certificates perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y
-wait $!
-
-# Extraction and software tools
-echo "Installing extraction and container tools"
-sudo apt-get install git unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel -y
+apt-get install ca-certificates git unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller axel perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y
 wait $!
 
 sudo apt-get install gcc git ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
