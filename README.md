@@ -7,6 +7,11 @@ works with centos/debian based linux.
 ```
 wget -O freshserver.sh https://git.io/vKXBT && bash freshserver.sh
 ```
+Or
+Minimal
+```
+wget -O fresh-min.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/Fresh-min.sh && bash fresh-min.sh
+```
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
 This script will also update your server packages and install webmin for you.
 
