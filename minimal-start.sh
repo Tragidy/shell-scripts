@@ -26,10 +26,12 @@ echo "Starting inital update and upgrade of known packages"
 if [[ "$OS" = 'debian' ]]; then
 apt-get update -y && apt-get upgrade -y &
 wait $!
+apt-get install dialog -y
+wait $!
 
 #Install inital apps
 echo "Updating and upgrades moving on..."
-apt-get install dialog fail2ban apt-utils ca-certificates -y
+apt-get install fail2ban apt-utils ca-certificates -y
 wait $!
 echo "Installing common packages"
 apt-get install git axel perl libnet-ssleay-perl openssl python gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
