@@ -19,7 +19,8 @@ else
 	echo "Looks like you aren't running this installer on a Debian or CentOS system"
 	exit 4
 fi
-
+iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
 
 echo "Starting inital update and upgrade of known packages"
 if [[ "$OS" = 'debian' ]]; then
