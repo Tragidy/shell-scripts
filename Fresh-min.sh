@@ -23,25 +23,40 @@ fi
 
 echo "Starting inital update and upgrade of known packages"
 if [[ "$OS" = 'debian' ]]; then
-echo "Starting inital update and upgrade of known packages"
 apt-get update -y && apt-get upgrade -y &
 wait $!
 
 #Install inital apps
-echo "Updating and upgrades complete, moving on..."
-apt-get install fail2ban -y
+echo "Updating and upgrades moving on..."
+apt-get install dialog fail2ban apt-utils ca-certificates -y
 wait $!
 echo "Installing common packages"
-apt-get install ca-certificates git zip unzip p7zip-full p7zip-rar sharutils axel perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl python libgd-graph-perl gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
+apt-get install git axel perl libnet-ssleay-perl openssl python gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
 wait $!
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
 service fail2ban restart >/dev/null 2>&1
 
+echo ""
+	echo "Do you want to install OpenVPN now?"
+	echo "   1) Yes"
+	echo "   2) No"
+	read -p "CONFOP [1-2]: " -e -i 1 CONFOP
+	echo ""
+	
+	case $CONFOP in
+		1)
+echo "Starting OpenVPN Wizard"
 mkdir vpn
 cd vpn
-wget https://git.io/vpn -O openvpn-install.sh && bash openvpn-install.sh
+wget https://git.io/vpn -O ovpn.sh && bash opvpn.sh
 wait $!
+echo "Script Complete"
+		;;
+		2)
+echo "Script Complete"
+		;;
+	esac
 
 fi
