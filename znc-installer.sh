@@ -22,7 +22,7 @@ fi
 rm -rf zncinstaller
 mkdir zncinstaller
 cd zncinstaller
-wget http://znc.in/releases/znc-1.6.3.tar.gz &
+wget http://znc.in/releases/znc-1.6.5.tar.gz &
 wait $!
 tar -xzvf znc*.*gz &
 wait $!
