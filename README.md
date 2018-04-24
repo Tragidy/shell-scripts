@@ -8,7 +8,7 @@ works with centos/debian based linux.
 wget -O freshserver.sh https://git.io/vKXBT && bash freshserver.sh
 ```
 Or
-Minimal
+Minimal no webmin
 ```
 wget -O fresh-min.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/Fresh-min.sh && bash fresh-min.sh
 ```
