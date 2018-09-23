@@ -1,5 +1,6 @@
 #!/bin/bash
 # Fresh Server Primer
+# Have a new dedicated? or vps? this will complete some of the most basic tasks.
 # By TRAGiDY https://github.com/Tragidy/
 # 
 # Released Under Apache 2.0 License 
@@ -8,8 +9,6 @@
 # This script will work on RHEL and Debian maybe other distros
 # of the same families, although no support is offered for them. It has been 
 # designed to be as unobtrusive and universal as possible.
-
-# Clear window, show banner credits
 clear
 
 # Check for root
@@ -33,7 +32,7 @@ fi
 
 #Secure SSH Right Away
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sed -i 's/^Port .*/Port 54235/g' /etc/ssh/sshd_config
+sed -i 's/^Port .*/Port 35112/g' /etc/ssh/sshd_config
 sed -i 's/^ServerKeyBits .*/ServerKeyBits 4096/g' /etc/ssh/sshd_config
 service ssh restart
 
@@ -43,7 +42,7 @@ echo "Dropping all ICMP Echo Request for this session"
 iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
 echo "All ICMP Echo request are blocked"
-echo "SSH PORT changed to 54235"
+echo "SSH PORT changed to 35112"
 echo "Keybits Changed to 4096"
 sleep 1
 
@@ -79,7 +78,7 @@ wait $!
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget -O webmin.deb http://prdownloads.sourceforge.net/webadmin/webmin-1.890-1.noarch.rpm &
+wget -O webmin.deb http://prdownloads.sourceforge.net/webadmin/webmin_1.890_all.deb &
 wait $!
 echo "Download complete."
 echo "Installing Webmin........................"
@@ -100,7 +99,7 @@ echo "Script Complete"
 echo "Install the firewall webmin module in:"
 echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
-echo "SSH Port: 54235"
+echo "SSH Port: 35112"
 echo "Webmin Port: 10000"
 else
 yum update -y && yum upgrade -y &
@@ -136,7 +135,7 @@ wait $!
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget -O webmin.rpm http://prdownloads.sourceforge.net/webadmin/webmin-1.881-1.noarch.rpm &
+wget -O webmin.rpm http://prdownloads.sourceforge.net/webadmin/webmin-1.890-1.noarch.rpm &
 wait $!
 echo "Installing Webmin........................"
 echo "This can take a long time on ARM or Small VPS systems."
@@ -156,6 +155,6 @@ echo "Script Complete"
 echo "Install the firewall webmin module in:"
 echo "Webmin > Webmin Configuration > Webmin Modules >"
 echo "From local file > /usr/local/csf/csfwebmin.tgz > Install Module"
-echo "SSH Port: 54235"
+echo "SSH Port: 35112"
 echo "Webmin Port: 10000"
 				fi
