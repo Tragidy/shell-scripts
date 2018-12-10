@@ -7,9 +7,6 @@
 
 # This script will work on any CentOS Bases or Debian Based linux.
 
-
-# Detect "sh" instead of bash for debian user
-# Thanks Nyr for the help
 if readlink /proc/$$/exe | grep -qs "dash"; then
 	echo "This script needs to be run with bash"
 	exit 1
@@ -35,43 +32,36 @@ fi
 
 echo ""
 	echo "What Video Source do you want to work with?"
-	echo "   1) x264 480P"
-	echo "   2) x264 720P"
-	echo "   3) X264 1080P"
-	echo "   4) X265 1080P"
-	echo "   5) X265 4K"
-	read -p "VID [1-5]: " -e -i 1 VID
+	echo "   1) x264 1080P"
+	echo "   2) x264 4K"
+	echo "   3) X265 1080P"
+	echo "   4) X265 4K"
+	read -p "VID [1-4]: " -e -i 1 VID
 	echo ""
 
 case $VID in
 		1)
-		wget -O sample.avi http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_surround-fix.avi &
+		wget -O sample.mp4 https://s3.amazonaws.com/x265.org/video/Tears_400_x264.mp4 &
 		wait $!
-		avconv -i sample.avi -c:v libx264 -strict experimental sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		2)
-		wget -O sample.avi http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_720p_surround.avi &
+		wget -O sample.mp4 https://s3.amazonaws.com/x265.org/video/BigBuckBunny_2000h264.mp4 &
 		wait $!
-		avconv -i sample.avi -c:v libx264 -strict experimental sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 		3)
-		wget -O sample.avi http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_surround.avi &
-		wait $!
-		avconv -i sample.avi -c:v libx264 -strict experimental sample-out.mp4 &
-		wait $!
-		;;
-		4)
 		wget -O sample.mp4 https://s3.amazonaws.com/x265.org/video/Tears_400_x265.mp4 &
 		wait $!
 		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
-		5)
-		wget -O sample.mkv http://downloads.4ksamples.com/downloads/sample-Elysium.2013.2160p.mkv &
+		4)
+		wget -O sample.mp4 https://s3.amazonaws.com/x265.org/video/BigBuckBunny_2000hevc.mp4 &
 		wait $!
-		avconv -i sample.mkv -c:v libx264 -strict experimental sample-out.mp4 &
+		avconv -i sample.mp4 -c:v libx264 -strict experimental sample-out.mp4 &
 		wait $!
 		;;
 	esac
