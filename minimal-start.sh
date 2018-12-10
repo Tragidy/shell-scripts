@@ -4,7 +4,7 @@
 # Released Under Apache 2.0 License 
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# Debian supported only.
+# Debian Strech++ supported only.
 
 # Check for root
 if [[ "$EUID" -ne 0 ]]; then
@@ -31,8 +31,16 @@ wait $!
 
 #Install inital apps
 echo "Updating and upgrades moving on..."
-apt-get install fail2ban apt-utils ca-certificates -y
+apt-get install fail2ban apt-utils ca-certificates apt-transport-https -y
 wait $!
+echo "Added TOR Sources"
+deb https://deb.torproject.org/torproject.org stretch main
+wait $!
+deb-src https://deb.torproject.org/torproject.org stretch main
+wait $!
+gpg2 --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 
+wait $!
+gpg2 --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 echo "Installing common packages"
 apt-get install git axel perl libnet-ssleay-perl openssl python gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
 wait $!
