@@ -78,7 +78,7 @@ wait $!
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget -O webmin.deb http://prdownloads.sourceforge.net/webadmin/webmin_1.890_all.deb &
+wget -O webmin.deb http://prdownloads.sourceforge.net/webadmin/webmin_1.900_all.deb &
 wait $!
 echo "Download complete."
 echo "Installing Webmin........................"
@@ -135,7 +135,7 @@ wait $!
 
 # Install Webmin
 echo "Downloading Webmin from Source Forge"
-wget -O webmin.rpm http://prdownloads.sourceforge.net/webadmin/webmin-1.890-1.noarch.rpm &
+wget -O webmin.rpm http://prdownloads.sourceforge.net/webadmin/webmin-1.900-1.noarch.rpm &
 wait $!
 echo "Installing Webmin........................"
 echo "This can take a long time on ARM or Small VPS systems."
