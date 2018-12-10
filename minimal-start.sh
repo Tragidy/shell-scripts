@@ -1,10 +1,10 @@
 #!/bin/bash
-# Self Scanning Installer
+# Simple VPS Primer
 # 
 # Released Under Apache 2.0 License 
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# Debian maybe other distros
+# Debian supported only.
 
 # Check for root
 if [[ "$EUID" -ne 0 ]]; then
