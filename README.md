@@ -22,7 +22,7 @@ Install the firewall webmin module in:
 Webmin > Webmin Configuration > Webmin Modules >
 From local file > /usr/local/csf/csfwebmin.tgz
 
-##Test your VPS or ARM CPU for encoding x264 and x265
+**Test your VPS or ARM CPU for encoding x264 and x265**
 ```
 wget -O libav.sh https://git.io/vKXBg && bash libav.sh
 ```
@@ -36,13 +36,13 @@ What Video Source do you want to work with?
 VID [1-5]: 1
 ```
 
-##VPS Fast Start
+**VPS Fast Start**
 Installs various items such as Axel, OpenVPN, TOR, lots of services you may want on your remote server.
 ```
-wget -O fresh-min.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/vps-quick.sh && bash vps-quick.sh
+wget -O vps-quick.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/vps-quick.sh && bash vps-quick.sh
 ```
 
-##ZNC Installer
+**ZNC Installer**
 
 Downloads, configures, compiles from source with options for low memory systems
 ```
