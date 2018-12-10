@@ -7,11 +7,7 @@ works with centos/debian based linux.
 ```
 wget -O freshserver.sh https://git.io/vKXBT && bash freshserver.sh
 ```
-Or
-Minimal no webmin
-```
-wget -O fresh-min.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/Fresh-min.sh && bash fresh-min.sh
-```
+
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
 This script will also update your server packages and install webmin for you.
 
@@ -26,7 +22,7 @@ Install the firewall webmin module in:
 Webmin > Webmin Configuration > Webmin Modules >
 From local file > /usr/local/csf/csfwebmin.tgz
 
-##Test your CPU for encoding x264 and x265
+##Test your VPS or ARM CPU for encoding x264 and x265
 ```
 wget -O libav.sh https://git.io/vKXBg && bash libav.sh
 ```
@@ -38,6 +34,12 @@ What Video Source do you want to work with?
    4) X265 1080P
    5) X265 4K
 VID [1-5]: 1
+```
+
+##VPS Fast Start
+Installs various items such as Axel, OpenVPN, TOR, lots of services you may want on your remote server.
+```
+wget -O fresh-min.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/vps-quick.sh && bash vps-quick.sh
 ```
 
 ##ZNC Installer
