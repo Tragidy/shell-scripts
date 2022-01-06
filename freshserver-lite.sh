@@ -34,7 +34,7 @@ fi
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sed -i 's/^Port .*/Port 42022/g' /etc/ssh/sshd_config
 sed -i 's/^ServerKeyBits .*/ServerKeyBits 4096/g' /etc/ssh/sshd_config
-service ssh restart
+systemctl restart ssh
 
 # We Assume this is a new instance/server so we want to go stealth for now 
 # Temp IP Table to block ping/icmp, cleared upon reboot
@@ -67,7 +67,7 @@ wait $!
 
 # Setup Auto update with cron
 echo "30  4  *  *  *  apt update -y" >> /etc/crontab/
-service webmin restart >/dev/null 2>&1 &
+systemctl restart ssh >/dev/null 2>&1 &
 wait $!
 service fail2ban restart >/dev/null 2>&1
 clear
