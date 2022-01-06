@@ -27,6 +27,7 @@ wait $!
 tar -xzvf znc*.*gz &
 wait $!
 cd znc*
+cd znc*
 clear
 echo ""
 	echo "Please select a configuration option"
