@@ -18,15 +18,11 @@ apt install build-essential libssl-dev libperl-dev libicu-dev -y &
 wait $!
 fi
 
-# Create working space
-rm -rf zncinstaller
-mkdir zncinstaller
-cd zncinstaller
+# Fectch ZNC
 wget https://znc.in/releases/znc-1.8.2.tar.gz &
 wait $!
 tar -xzvf znc*.*gz &
 wait $!
-cd znc-1.8.2
 clear
 echo ""
 	echo "Please select a configuration option"
@@ -38,6 +34,7 @@ echo ""
 	case $CONFOP in
 		1)
 echo "Configuring ZNC with basic/stock options"
+cd znc-1.8.2
 ./configure &
 wait $!
 echo "Configure complete, getting read to build from source"
@@ -53,6 +50,7 @@ echo "Under any account on the system please issue the command znc --makeconf to
 		;;
 		2)
 echo "Configuring ZNC for a low memory system"
+cd znc-1.8.2
 ./configure --disable-optimization CXXFLAGS="--param ggc-min-expand=2 --param ggc-min-heapsize=20000" &
 wait $!
 echo "Configure complete, getting read to build from source"
