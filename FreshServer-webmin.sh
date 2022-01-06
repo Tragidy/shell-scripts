@@ -49,12 +49,12 @@ sleep 1
 echo "Starting inital update and upgrade of known packages"
 if [[ "$OS" = 'debian' ]]; then
 echo "Starting inital update and upgrade of known packages"
-apt-get update -y && apt-get upgrade -y &
+apt update -y && apt upgrade -y &
 wait $!
 
 #Install inital apps, mainly Fail2Ban, we want this running ASAP
 echo "Updating and upgrades complete, moving on..."
-apt-get install fail2ban -y >/dev/null 2>&1 &
+apt install fail2ban -y >/dev/null 2>&1 &
 wait $!
 echo "Installing common packages"
 apt-get install ca-certificates perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python libgd-graph-perl -y >/dev/null 2>&1 &
