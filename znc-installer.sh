@@ -12,9 +12,9 @@ fi
 # Are you running Debian?
 if [[ -e /etc/debian_version ]]; then
 OS=debian
-apt-get update -y &
+apt update -y &
 wait $!
-apt-get install build-essential libssl-dev libperl-dev libicu-dev -y &
+apt install build-essential libssl-dev libperl-dev libicu-dev -y &
 wait $!
 fi
 
@@ -22,7 +22,7 @@ fi
 rm -rf zncinstaller
 mkdir zncinstaller
 cd zncinstaller
-wget https://znc.in/releases/znc-1.7.1.tar.gz &
+wget https://znc.in/releases/znc-1.8.2.tar.gz &
 wait $!
 tar -xzvf znc*.*gz &
 wait $!
