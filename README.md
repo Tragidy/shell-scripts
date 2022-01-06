@@ -2,10 +2,16 @@
 
 Scripts for CentOS, Debian, Fedora and Ubuntu
 
-##Fresh Server Script
+##Fresh Server with Webmin/CSF
 works with centos/debian based linux.
 ```
-wget -O freshserver.sh https://git.io/vKXBT && bash freshserver.sh
+wget -O freshserver.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/freshserver-webmin.sh && bash freshserver.sh
+```
+
+##Fresh Server without Webmin/CSF
+works with centos/debian based linux.
+```
+wget -O freshserver.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/master/freshserver-lite.sh && bash freshserver.sh
 ```
 
 This script will install basic security measures such as Fail2Ban and Config Server Firewall
