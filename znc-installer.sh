@@ -26,8 +26,7 @@ wget https://znc.in/releases/znc-1.8.2.tar.gz &
 wait $!
 tar -xzvf znc*.*gz &
 wait $!
-cd znc*
-cd znc*
+znc-1.8.2
 clear
 echo ""
 	echo "Please select a configuration option"
