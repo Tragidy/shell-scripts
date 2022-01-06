@@ -32,7 +32,7 @@ fi
 
 #Secure SSH Right Away
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sed -i 's/^Port .*/Port 42022/g' /etc/ssh/sshd_config
+sed -i 's/^#Port .*/Port 42022/g' /etc/ssh/sshd_config
 sed -i 's/^ServerKeyBits .*/ServerKeyBits 4096/g' /etc/ssh/sshd_config
 systemctl restart ssh
 
