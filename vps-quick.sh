@@ -4,7 +4,7 @@
 # Released Under Apache 2.0 License 
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# Debian Strech++ supported only.
+# Debian 10 supported only.
 
 # Check for root
 if [[ "$EUID" -ne 0 ]]; then
@@ -24,14 +24,14 @@ iptables -A OUTPUT -p icmp --icmp-type echo-reply -j DROP
 
 echo "Starting inital update and upgrade of known packages"
 if [[ "$OS" = 'debian' ]]; then
-apt-get update -y && apt-get upgrade -y &
+apt update -y && apt upgrade -y &
 wait $!
 apt-get install dialog -y
 wait $!
 
 #Install inital apps
 echo "Updating and upgrades moving on..."
-apt-get install fail2ban apt-utils ca-certificates apt-transport-https -y
+apt install fail2ban apt-utils ca-certificates apt-transport-https -y
 wait $!
 echo "Added TOR Sources"
 deb https://deb.torproject.org/torproject.org stretch main
@@ -42,11 +42,11 @@ gpg2 --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 wait $!
 gpg2 --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 echo "Installing common packages"
-apt-get install git axel perl libnet-ssleay-perl openssl python gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
+apt install git axel perl libnet-ssleay-perl openssl python gcc ruby ruby-dev libcurl4-openssl-dev make zlib1g-dev -y
 wait $!
 
 # Setup Auto update with cron
-echo "30  4  *  *  *  apt-get update -y" >> /etc/crontab/
+echo "30  4  *  *  *  apt update -y" >> /etc/crontab/
 service fail2ban restart >/dev/null 2>&1
 
 echo ""
