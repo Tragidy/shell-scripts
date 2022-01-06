@@ -52,7 +52,7 @@ wget -O vps-quick.sh https://raw.githubusercontent.com/Tragidy/shell-scripts/mas
 
 Downloads, configures, compiles from source with options for low memory systems
 ```
-wget -O znci.sh https://git.io/vKXB9 && bash znci.sh
+wget -O znci.sh https://git.io/JSQSZ && bash znci.sh
 ```
 ```
 Please select a configuration option
